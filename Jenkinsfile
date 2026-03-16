@@ -1,13 +1,13 @@
 pipeline {
   agent any
   tools { 
-      maven 'DHT_MVN' 
-      jdk 'DHT_SENSE' 
+      maven 'MAVEN' 
+      jdk 'JDK' 
   }
   stages {
     stage('check out') {
       steps {
-        git(url: 'https://github.com/dhetong/maven-samples-A6.git', branch: 'master')
+        git(url: 'https://github.com/danielrhuynh/maven-samples.git', branch: 'master')
       }
     }
 
@@ -16,6 +16,5 @@ pipeline {
         sh 'mvn verify'
       }
     }
-
   }
 }
